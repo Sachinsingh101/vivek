@@ -1,0 +1,28 @@
+body{background-image:url(images/2.jpg);background-size:contain;background-attachment: fixed;background-blend-mode: darken;}
+ul > li{padding:5px;}
+ul > li a{text-decoration: none;color:black;}
+.mycard{height:90vh;}
+.mycard:hover{transform: scale(1.1);transition-duration:0.5s;}
+.imgheight{width:13vw;padding-top:10px;}
+.imgheight:hover{transform: scale(1.1);transition-duration: 0.5s;}
+.hero2 img{width:16vw;padding-left:40px;padding-top: 20px;}
+.aboutus:hover{background:rgb(255, 0, 140);}
+/* .hero2 img{animation: movegallery 20s ease 2s infinite none;} */
+.hero2 img:hover{filter:grayscale(1);cursor: pointer;transition-delay:0.5s;transform: scale(2);transition-timing-function: ease-in-out;}
+@keyframes movegallery {
+    0%{transform:translateY(0px);}
+    10%{transform:translateY(-80px);}
+    20%{transform:translateY(-110px);}
+    30%{transform:translateY(-150px);}
+    40%{transform:translateY(-200px);}
+    50%{transform:translateY(-150px);}
+    60%{transform:translateY(-110px);}
+    70%{transform:translateY(-80px);}
+    80%{transform:translateY(-50px);}
+    90%{transform:translateY(-20px);}
+    100%{transform:translateY(0px);}
+    
+}
+.customer img{width:10vw;;border-radius:30%;border-radius:30%;}
+
+
