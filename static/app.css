@@ -25,4 +25,24 @@ ul > li a{text-decoration: none;color:black;}
 }
 .customer img{width:10vw;;border-radius:30%;border-radius:30%;}
 
+@media screen and (min-width:600px) {
+    .hero1{width:70vw;}
+    .hero2container{width:70vw;}
+    .aboutus{width: 70vw;}
+}
+@media screen and (max-width:600px) {
+    body{background:linear-gradient(to right,rgb(255, 0, 85),rgb(255, 0, 128),rgb(255, 0, 170),rgb(174, 0, 255)) !important;background-attachment: fixed;}
+    .hero1{width:95vw;}
+    .imgheight{width:27vw;height:20vh;}
+    .mycard{height:100 vh;}
+    .hero1{font-size:70%;text-align: center;}
+    .hero2 img{width:40vw;padding-left:30px;padding-top: 20px;}
+    .hero2container{width:95vw;}
+    .aboutus{width: 95vw;font-size:15px;height: 95vh;}
+    .gayabimg{display: none;}
+    .price{width:95vw !important;padding: 20px;}
+    .customer{width: 95vw !important;}
+    .bg{width: 90vw !important;}
+}
+
 

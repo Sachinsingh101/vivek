@@ -12,9 +12,9 @@
 <body>
 
     <br>
-    <div class="container" style="background:rgba(0, 0, 0, 0.925);width:70vw;">
+    <div class="container hero1" style="background:rgba(0, 0, 0, 0.925);">
         <div class="row" style="padding:20px;">
-            <div class="col-2 mycard"style="background:#0EE58A;box-shadow:5px 7px 10px;">
+            <div class="col-md-2 col-4 mycard"style="background:#0EE58A;box-shadow:5px 7px 10px;">
                 <div><img src="{{url_for('static',filename='images/logo.jpg')}}" alt="" style="width:100%;height:250px;"></div>
                 <ul style="display:flex;flex-direction:column;justify-content: flex-start;list-style: none;font-size: 115%;padding: 10px;">
                     
@@ -26,7 +26,7 @@
                 </ul>
             </div>
             
-            <div class="col-10">
+            <div class="col-md-10 col-8">
                 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false" >
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -79,7 +79,7 @@
 
 
     <br><br><br>
-    <div class="container" style="background:rgba(0, 0, 0, 0.911);width:70vw;border-radius: 10px;height:85vh;overflow-y:scroll;">
+    <div class="container hero2container" style="background:rgba(0, 0, 0, 0.911);border-radius: 10px;height:85vh;overflow-y:scroll;">
         <div class="row hero2" id="hero2" style="text-align:center;padding:10px;">
             <h2 id="gallery" style="padding: 20px;">Gallery</h2>
             <img src="{{url_for('static',filename='images/1.jpg')}}" alt="" class="imggallery">
@@ -109,22 +109,27 @@
         </div>
     </div>
     <br><br><br>
-    <div class="container aboutus" style="background:rgba(0, 0, 0, 0.89);width:70vw;border-radius: 10px;height:85vh;color:white">
-        <div class="row" style="padding:10px;padding: 20px;">
-            <img src="{{url_for('static',filename='images/logo.jpg')}}" alt="" class="col-6" style="height:80vh;"><br>
-            <div class="col-6">
-                <p class="display-4">ClickZone Vivek</p><br>
-                <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, alias nemo! Perspiciatis vitae similique natus possimus consequuntur, minus, veniam aspernatur totam culpa iste sed quam sequi sint, ratione vero quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sit nihil vel suscipit perferendis, dolor corporis ea iste. Veritatis tenetur repellat nam architecto ullam itaque sequi numquam alias qui repudiandae?</article>
+    <div class="container aboutus" style="background:rgba(0, 0, 0, 0.89);border-radius: 10px;height:85vh;color:white">
+        <div class="row" style="padding:10px;">
+            <img src="{{url_for('static',filename='images/logo.jpg')}}" alt="" class="col-md-6 col-5 gayabimg" style="height:80vh;"><br>
+            <div class="col-md-6 col-12">
+                <p class="display-4">ClickZone Vivek</p>
+                <article>veniam aspernatur totam culpa iste sed quam sequi sint, ratione vero quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sit nihil vel suscipit perferendis, dolor corporis ea iste. Veritatis tenetur repellat nam architecto ullam itaque sequi numquam alias qui repudiandae?</article>
                 <div><i class="fa-sharp fa-solid fa-file-signature" style="color:white;"></i> </i>Its Vivek Here</div>
-                <div>The Photographer</div><br>
+                <div>The Photographer</div>
                 <h3>Address</h3>
-                <div>Bagbera,Jamshedpur Jharkhand</div><br>
+                <div>Bagbera,Jamshedpur Jharkhand</div>
                 <div>Phone no:- <a href="tel:+9113367466">Phone no:- 9113367466</a></div>
+                <div>The Photographer</div>
+                <h3>Address</h3>
+                <div>Bagbera,Jamshedpur Jharkhand</div>
+                <div>Phone no:- <a href="tel:+9113367466">Phone no:- 9113367466</a></div>
+                
             </div>
         </div>
     </div>
     <br><br><br>
-    <div class="container" style="background:rgba(0, 0, 0, 0.849);padding: 50px;width:70vw;">
+    <div class="container price" style="background:rgba(0, 0, 0, 0.849);padding: 50px;width:70vw;">
         <div class="row">
             <div class="card">
                 <div class="card-header">
@@ -179,7 +184,7 @@
         <div class="col"><h3> <i class="fa-solid fa-check" style="font-size:110%;background:green;color:white;"></i>Ujjwala Chetan</h3></i><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, tempora voluptatibus. Modi quam accusantium assumenda, amet sed inventore animi vel?</p></div>
       </div>
     </div><br><br><br>
-    <div class="container" style="background:rgba(0, 0, 0, 0.884);width:70vw;border-radius: 10px;padding:5px;color:white;text-align: center;">
+    <div class="container bg" style="background:rgba(0, 0, 0, 0.884);width:70vw;border-radius: 10px;padding:5px;color:white;text-align: center;">
       <div class="row">
         <p>Thanku for Visiting us !!</p>
         <p class="text-muted">copyright @ClickZone Vivek 2022 <sup>TM</sup></p>
