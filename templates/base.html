@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="{{url_for('static',filename='app.css')}}">
 </head>
 <body>
+    <!-- preloader****************** -->
+    <h1 style="text-align:center;">
+      <a style="color:gold;text-decoration: none;" href="" class="typewrite" data-period="2000" data-type='[ "Hi, Im Vivek.", "I am Photographer.", "I Love Photoshop.", "I Love to Editing" ]'>
+        <span class="wrap"></span>
+      </a>
+    </h1>
+    <!-- preloader************************* -->
     <div class="dialog" id="dialog" style="display:flex;justify-content:center;z-index: 9999;"> 
       <div class="dialogbox" id="dialogbox" style="background: rgb(255, 255, 255);position: absolute;margin-top: 30vh;text-align: center;padding:5px;border-radius: 20px;font-size: 130%;z-index: 999;display: none;position:fixed;">
         <p><i class="fa-sharp fa-solid fa-gift" style="color:rgb(255, 0, 98);"></i>Hurry UP!</p>
@@ -18,17 +25,17 @@
       </div>
     </div>
     <div class="mainbody" id="mainbody">
-      <div class="container hero1" style="background:rgba(0, 0, 0, 0.925);">
+      <div class="container hero1" id="hero1" style="background:rgba(0, 0, 0, 0.925);">
         <div class="row hero1row" style="padding:20px;">
             <div class="col-md-2 col-4 mycard"style="background:#0EE58A;box-shadow:5px 7px 10px;">
                 <div><img src="{{url_for('static',filename='images/logo.jpg')}}" alt="" style="width:100%;height:250px;" class="logo"></div>
                 <ul style="display:flex;flex-direction:column;justify-content: flex-start;list-style: none;font-size: 115%;padding: 10px;">
                     
-                    <li><a><i class="fa-solid fa-house"></i><a href="" id="home">Home</a></li>
+                    <li><a><i class="fa-solid fa-house"></i><a href="#hero1" id="home">Home</a></li>
                     <li><i class="fa-solid fa-image"></i><a href="#gallery" >Gallery</a></li>
-                    <li><i class="fa-solid fa-address-card"></i><a href="">About us</a></li>
-                    <li><i class="fa-solid fa-money-bill-trend-up"></i><a href="">Pricing</a></li>
-                    <li><i class="fa-sharp fa-solid fa-person"></i><a href="">Customers</a></li>
+                    <li><i class="fa-solid fa-address-card"></i><a href="#about">About us</a></li>
+                    <li><i class="fa-solid fa-money-bill-trend-up"></i><a href="#price">Pricing</a></li>
+                    <li><i class="fa-sharp fa-solid fa-person"></i><a href="#customer">Customers</a></li>
                 </ul>
                 <h4 class="text-muted" style="opacity:0.8;">ClickZone Vivek</h4>
             </div>
@@ -120,7 +127,7 @@
         <div class="row" style="padding:10px;">
             <img src="{{url_for('static',filename='images/logo.jpg')}}" alt="" class="col-md-6 col-5 gayabimg" style="height:80vh;"><br>
             <div class="col-md-6 col-12">
-                <p class="display-4">ClickZone Vivek</p>
+                <p class="display-4" id="about">ClickZone Vivek</p>
                 <article>veniam aspernatur totam culpa iste sed quam sequi sint, ratione vero quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sit nihil vel suscipit perferendis, dolor corporis ea iste. Veritatis tenetur repellat nam architecto ullam itaque sequi numquam alias qui repudiandae?</article>
                 <div><i class="fa-sharp fa-solid fa-file-signature" style="color:white;"></i> </i>Its Vivek Here</div>
                 <div>The Photographer</div>
@@ -136,7 +143,7 @@
         </div>
       </div>
       <br><br><br>
-      <div class="container price" style="background:rgba(0, 0, 0, 0.849);padding: 50px;width:70vw;">
+      <div class="container price" id="price" style="background:rgba(0, 0, 0, 0.849);padding: 50px;width:70vw;">
         <div class="row">
             <div class="card">
                 <div class="card-header">
@@ -175,7 +182,7 @@
         </div>
       </div>
       </div><br><br><br>
-      <div class="container customer" style="background:rgba(0, 0, 0, 0.884);width:70vw;border-radius: 10px;padding: 20px;color:white;text-align: center;">
+      <div class="container customer" id="customer" style="background:rgba(0, 0, 0, 0.884);width:70vw;border-radius: 10px;padding: 20px;color:white;text-align: center;">
        <h2>Testimonials</h2>
        <div class="row">
           <div class="col-6" style="display:flex;justify-content:center;">
@@ -198,7 +205,7 @@
       </div>
     </div>
     <script>
-      setTimeout(showdialog,3000);
+      setTimeout(showdialog,6000);
       var z=document.querySelector("#dialogbox");
       var y=document.querySelector("#mainbody");
       function showdialog(){
@@ -209,6 +216,62 @@
         document.querySelector("#dialog").classList.add("hide");
         var y=document.querySelector("#mainbody").style.opacity='100%';
       }
+      var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
