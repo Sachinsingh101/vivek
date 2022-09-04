@@ -1,4 +1,4 @@
-body{background-image:url(images/2.jpg);background-size:contain;background-attachment: fixed;background-blend-mode: darken;}
+body{background:linear-gradient(to right,rgb(255, 0, 85),rgb(255, 0, 128),rgb(255, 0, 170),rgb(174, 0, 255)) !important;background-attachment: fixed;}
 ul > li{padding:5px;}
 ul > li a{text-decoration: none;color:black;}
 .mycard{height:auto;}
@@ -29,11 +29,14 @@ ul > li a{text-decoration: none;color:black;}
     .hero1{width:70vw;}
     .hero2container{width:70vw;}
     .aboutus{width: 70vw;}
-}
+    .menu{flex-direction:column;justify-content:space-evenly;}
+    .carousel-inner img{height: 50vh;}
+}    
 @media screen and (max-width:600px) {
     body{background:linear-gradient(to right,rgb(255, 0, 85),rgb(255, 0, 128),rgb(255, 0, 170),rgb(174, 0, 255)) !important;background-attachment: fixed;}
     .hero1{width:95vw;border-radius: 10px !important;}
     .imgheight{width:30.5vw;height:20vh;}
+    .carousel-inner img{height: 60vh;padding-bottom: 10px;}
     
     .hero1{font-size:70%;text-align:left;}
     .hero2 img{width:44vw;padding-left:9px;padding-top: 20px;}
@@ -45,6 +48,10 @@ ul > li a{text-decoration: none;color:black;}
     .bg{width: 90vw !important;}
     .hero1row{padding:5px !important;}
     .logo{width:122% !important;margin-left: -3vw !important;}
+    .mycard img{display:none;}
+    .mycard{border-radius: 10px;height:min-content;text-align: center;margin-bottom:10px;}
+    .menu{flex-direction: row;justify-content:space-evenly;}
+    .hero1imgs{display: none;}
 }
 .fa-gift{animation-name: giftshower;animation-timing-function: ease;animation-duration: 2s;animation-iteration-count:3;}
 @keyframes giftshower {
